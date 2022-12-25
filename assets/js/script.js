@@ -1,4 +1,5 @@
-// Set the interval for image change (in milliseconds)
+/* not needed now */
+/* // Set the interval for image change (in milliseconds)
 const interval = 100;
 
 // Select the image element
@@ -23,4 +24,10 @@ setInterval(() => {
 
   // Update the image source
   sprite.src = imageSources[currentImage];
-}, interval);
+}, interval); */
+
+const element = document.getElementById("a");
+
+element.addEventListener("click", function() {
+  element.classList.toggle("animate");
+});

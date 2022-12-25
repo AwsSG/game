@@ -1,16 +1,72 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(356deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
 section {
     display: flex;
     justify-content: center;
     margin: 10px;
 }
+
 .game-container {
     display: flex;
-    height: 500px;
-    width: 500px;
-    border: 1px solid blue;
+    height: 600px;
+    width: 600px;
 }
 
-#sprite {
+/* not needed now */
+/* #sprite {
     max-height: 40%;
     align-self: flex-end;
+} */
+
+table tr td {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+td img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+/* #a {
+    animation: rotate-90-ccw 1s 1 forwards;
+} */
+
+.animate {
+    animation: rotate-90-ccw 1s 1 forwards;
+}
+
+/* turn 90 degrees animation */
+@-webkit-keyframes rotate-90-ccw {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes rotate-90-ccw {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
 }
