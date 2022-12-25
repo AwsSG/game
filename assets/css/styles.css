@@ -4,7 +4,13 @@ section {
     margin: 10px;
 }
 .game-container {
+    display: flex;
     height: 500px;
     width: 500px;
     border: 1px solid blue;
+}
+
+#sprite {
+    max-height: 40%;
+    align-self: flex-end;
 }
