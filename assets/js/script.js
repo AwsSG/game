@@ -37,15 +37,37 @@ element.addEventListener("click", function () {
   }, "500")
 }); */
 
-function rotateFoo() {
+/* function rotateFoo() {
   var angle = ($('#a').data('angle') + 90) || 90;
   $('#a').css({ 'transform': 'rotate(' + angle + 'deg)' });
   $('#a').data('angle', angle);
-}
+} */
+
+$('table tr td img').mousedown(function (event) {
+  switch (event.which) {
+    case 1:
+      var angle = ($(this).data('angle')) || 0;
+      angle -= 90;
+      $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
+      $(this).data('angle', angle);
+      break;
+    case 3:
+      var angle = ($(this).data('angle')) || 0;
+      angle += 90;
+      $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
+      $(this).data('angle', angle);
+      break;
+  }
+});
+
+/* $("table tr td img").click(function () { working code ----------------------
+  var angle = ($(this).data('angle')) || 0;
+  angle -= 90;
+  $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
+  $(this).data('angle', angle);
+}); */
 
 function rotateLeft() {
-  var elem = $(this).attr('id');
-  console.log(elem)
   var angle = ($(this).data('angle')) || 0;
   angle -= 90;
   $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
