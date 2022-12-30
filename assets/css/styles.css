@@ -5,7 +5,7 @@ html {
 body {
     height: 100%;
     background: rgb(2, 0, 36);
-    background: linear-gradient(356deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+/*  background: linear-gradient(356deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
 }
 
 section {
@@ -20,16 +20,14 @@ section {
     width: 600px;
 }
 
-/* not needed now */
-/* #sprite {
-    max-height: 40%;
-    align-self: flex-end;
-} */
-
 table tr td {
     height: 200px;
     width: 200px;
     text-align: center;
+}
+
+#start td, #finish td {
+    height: 50px;
 }
 
 td img {
@@ -37,86 +35,4 @@ td img {
     max-height: 100%;
     border-radius: 50%;
     transition: all 0.5s ease;
-}
-
-/* .rotated-0 {
-    animation: rotate-90-ccw 0.5s 1 forwards;
-    transform: rotate(-90deg);
-}
-
-.rotated-90 {
-    transform: rotate-180-ccw 0.5s 1 forwards;
-    transform: rotate(-180deg);
-}
-
-.rotated-180 {
-    transform: rotate-270-ccw 0.5s 1 forwards;
-    transform: rotate(-270deg);
-}
-
-.rotated-270 {
-    transform: rotate-360-ccw 0.5s 1 forwards;
-    transform: rotate(-360deg);
-} */
-
-/* #a {
-    transform: rotate(90deg);
-} */
-
-/* #a {
-    animation: rotate-90-ccw 1s 1 forwards;
-} */
-
-/* .animate {
-    animation: rotate-90-ccw 0.5s 1 forwards;
-} */
-
-/* rotate 90 degrees animation */
-
-@keyframes rotate-90-ccw {
-    0% {
-        -webkit-transform: rotate(0);
-        transform: rotate(0);
-    }
-
-    100% {
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-}
-
-@keyframes rotate-180-ccw {
-    0% {
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
-}
-
-@keyframes rotate-270-ccw {
-    0% {
-        -webkit-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-270deg);
-        transform: rotate(-270deg);
-    }
-}
-
-@keyframes rotate-360-ccw {
-    0% {
-        -webkit-transform: rotate(-270deg);
-        transform: rotate(-270deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(-360deg);
-        transform: rotate(-360deg);
-    }
 }

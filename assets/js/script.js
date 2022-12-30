@@ -1,44 +1,41 @@
-/* not needed now */
-/* // Set the interval for image change (in milliseconds)
-const interval = 100;
+jQuery(document).ready(function ($) {
 
-// Select the image element
-const sprite = document.getElementById('sprite');
+  $('table tr td img').mousedown(function (event) {
+    switch (event.which) {
+      case 1:
+        var angle = ($(this).data('angle')) || 0;
+        angle -= 90;
+        $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
+        $(this).data('angle', angle);
+        break;
+      case 3:
+        var angle = ($(this).data('angle')) || 0;
+        angle += 90;
+        $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
+        $(this).data('angle', angle);
+        break;
+    }
+  });
 
-// Set the initial image source
-let currentImage = 0;
-const imageSources = [
-  'assets/images/1.png',
-  'assets/images/2.png',
-  'assets/images/3.png',
-  'assets/images/4.png',
-  'assets/images/5.png'
+  /* level 1 winning combintion */
 
-];
-sprite.src = imageSources[currentImage];
+  /* var lvl1_win = {
+    a_angle: [-90, 270],
+    b_angle: [-90, 90],
+    c_angle: [90, -270],
+    d_angle: [-180, 180],
+    e_angle: [-90, 90],
+    f_angle: [0, 360],
+    g_angle: [-90, 90],
+    h_angle: [-90, 270],
+    i_angle: [90, -270]
+  } */
 
-// Change the image every interval
-setInterval(() => {
-  // Increment the current image
-  currentImage = (currentImage + 1) % imageSources.length;
+  var a_angle = [-90, 270];
+  $('#a').mousedown(function () {
+    if (($('#a').data('angle')) === -90 || ($('#a').data('angle')) === 270){
+      console.log($(this).data('angle'))
+    };
+  });
 
-  // Update the image source
-  sprite.src = imageSources[currentImage];
-}, interval); */
-
-$('table tr td img').mousedown(function (event) {
-  switch (event.which) {
-    case 1:
-      var angle = ($(this).data('angle')) || 0;
-      angle -= 90;
-      $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
-      $(this).data('angle', angle);
-      break;
-    case 3:
-      var angle = ($(this).data('angle')) || 0;
-      angle += 90;
-      $(this).css({ 'transform': 'rotate(' + angle + 'deg)' });
-      $(this).data('angle', angle);
-      break;
-  }
 });
