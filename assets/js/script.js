@@ -19,22 +19,24 @@ jQuery(document).ready(function ($) {
 
   /* level 1 winning combintion */
 
-  /* var lvl1_win = {
-    a_angle: [-90, 270],
-    b_angle: [-90, 90],
-    c_angle: [90, -270],
-    d_angle: [-180, 180],
-    e_angle: [-90, 90],
-    f_angle: [0, 360],
-    g_angle: [-90, 90],
-    h_angle: [-90, 270],
-    i_angle: [90, -270]
-  } */
+  var lvl1_win = {
+    a: [-90, 270],
+    b: [-90, 90],
+    c: [90, -270],
+    d: [-180, 180],
+    e: [-90, 90],
+    f: [0, 360],
+    g: [-90, 90],
+    h: [-90, 270],
+    i: [90, -270]
+  }
 
   var a_angle = [-90, 270];
-  $('#a').mousedown(function () {
-    if (($('#a').data('angle')) === -90 || ($('#a').data('angle')) === 270){
-      console.log($(this).data('angle'))
+  $('table tr td img').mousedown(function () {
+    var img_id = $(this).attr('id');
+    var img_angle = lvl1_win[img_id];
+    if (($(this).data('angle')) === img_angle[0] || ($(this).data('angle')) === img_angle[1]){
+      console.log("win!!!!!!")
     };
   });
 
