@@ -23,21 +23,35 @@ jQuery(document).ready(function ($) {
     a: [-90, 270],
     b: [-90, 90],
     c: [90, -270],
-    d: [-180, 180],
+    d: [0, 360],
     e: [-90, 90],
-    f: [0, 360],
-    g: [-90, 90],
-    h: [-90, 270],
-    i: [90, -270]
+    f: [-180, 180],
+    g: [-90, 270],
+    h: [-90, 90],
+    i: [-270, 90]
   }
 
-  var a_angle = [-90, 270];
+  var moves = 0 // moves counter
+
   $('table tr td img').mousedown(function () {
     var img_id = $(this).attr('id');
     var img_angle = lvl1_win[img_id];
-    if (($(this).data('angle')) === img_angle[0] || ($(this).data('angle')) === img_angle[1]){
-      console.log("win!!!!!!")
+    moves += 1;
+    /*    console.log(img_id);
+       console.log(img_angle); */
+    /* console.log($(this).data('angle')); */
+    if (($(this).data('angle')) === img_angle[0] || ($(this).data('angle')) === img_angle[1]) {
+      console.log("win!!!!!!");
+      $(this).addClass("point");
+    } else {
+      $(this).removeClass("point");
     };
+    /* check for win */
+    if ($('table tr td img.point').length === 9) { // count how many times class "point" exist
+      setTimeout(function () {
+        alert("YOU WIN!!");
+      }, 600);
+    }
   });
 
 });
